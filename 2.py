@@ -26,17 +26,6 @@ plt.ylabel('Average Price')
 plt.tight_layout()
 plt.show()
 
-plt.figure(figsize=(10, 6))
-package_avg_price = data_cleaned.groupby('Package')['Average Price'].median()
-sns.boxplot(x='Package', y='Average Price', data=data_cleaned)
-plt.xticks(rotation=90)
-plt.title('Average Price by Package Type')
-plt.xlabel('Package Type')
-plt.ylabel('Average Price')
-plt.tight_layout()
-plt.show()
-
-
 plt.figure(figsize=(12, 6))
 price_trend = data_cleaned.groupby('Date')['Average Price'].mean()
 sns.lineplot(x=price_trend.index, y=price_trend.values)
